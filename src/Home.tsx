@@ -124,7 +124,14 @@ const MintButtonContainer = styled.div`
     }
   }
 `;
+const Logo = styled.div`
+  flex: .7 0 auto;
+  align-items: center;
 
+  img {
+    height: 90px;
+  }
+`;
 const SolExplorerLink = styled.a`
   color: var(--title-text-color);
   border-bottom: 1px solid var(--title-text-color);
@@ -172,7 +179,7 @@ const Price = styled(Chip)`
   margin: 5px;
   font-weight: bold;
   font-size: 1.2em !important;
-  font-family: 'Patrick Hand', cursive !important;
+  font-family: 'montserrat-v23-latin-300',  !important;
 `;
 
 const Image = styled.img`
@@ -640,17 +647,20 @@ const Home = (props: HomeProps) => {
         <main>
             <MainContainer>
                 <WalletContainer>
+                <Logo><a href="https://www.demonsangelsnft.com/" target="_blank" rel="noopener noreferrer"><img alt="400" 
+                                                                                                          src="logo2.png"/></a></Logo>
                     <Wallet>
                         {wallet ?
                             <WalletAmount>{(balance || 0).toLocaleString()} SOL<ConnectButton/></WalletAmount> :
                             <ConnectButton>Connect Wallet</ConnectButton>}
                     </Wallet>
                 </WalletContainer>
+                
                 <br/>
                 <MintContainer>
                     <DesContainer>
                         <NFT elevation={3}>
-                            <h2>My NFT</h2>
+                            <h2>Mint is live</h2>
                             <br/>
                             <div><Price
                                 label={isActive && whitelistEnabled && (whitelistTokenBalance > 0) ? (whitelistPrice + " " + priceLabel) : (price + " " + priceLabel)}/><Image
